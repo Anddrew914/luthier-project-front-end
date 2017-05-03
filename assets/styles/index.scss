@@ -1,2 +1,51 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+header {
+  height: 450px;
+  text-align: center;
+  background: url('../images/Luthier-Project-Header.jpg');
+  background-size: cover;
+  color: white;
+}
+a {
+  color: white;
+}
+h1 {
+  font-family: "Times-New-Roman", Times, serif;
+  font-size: 70px;
+  color: rgba(255,255,255,.90);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+img {
+  margin: 40px 0px 0px 0px;
+  border: 7px solid white;
+  border-radius: 20px;
+}
+ul {
+  margin-top: 335px;
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+}
+li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+article {
+  max-width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.noborder {
+  border: 7px solid black;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 36px;
+    padding: 5px;
+  }
+  li {
+    padding: 5px;
+    display: block;
+  }
+}
