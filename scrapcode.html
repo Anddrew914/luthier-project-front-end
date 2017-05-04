@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+header {
+      text-align: center;
+      background-size: cover;
+      }
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  background: #232323;
+  max-width: 600px;
+}
+div {
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 12px;
+  max-width: 600px;
+}
+a {
+  color: white;
+  font-family: 'Ewert';
+}
+h1 {
+  font-family: 'Ewert';
+  text-align: center;
+  font-size: 75px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+  font-family: 'Ewert';
+}
+h3 {
+  color: rgba(255,255,255,.5);
+  font-family: "Times New Roman", Times, serif;
+
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  width: 580px;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://reverb-res.cloudinary.com/image/upload/s--J6Vh4L2A--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_620,q_90,w_620/v1455054873/oe32oqj7qovhlda7gc0b.jpg");
+  height: 550;
+}
+.second{
+  background-image: url("http://dash.ga.co/assets/secondcourse.jpg");
+}
+.dessert{
+  background-image: url("http://dash.ga.co/assets/dessertcourse.jpg");
+}
+.price {
+  float: right;
+}
+button {
+  margin: 3px 0 10px 0;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+  li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+      text-align: center;
+</style>
+
+</head>
+
+<body>
+ <header>
+<h1>Boston Violins</h1>
+<h2>A decentralized collective of Boston Based Luthiers</h2>
+    <ul>
+      <li><a href="https://dash.generalassemb.ly/Anddrew914/build-your-own-personal-website">About Me</a></li>
+      <li><a href="https://dash.generalassemb.ly/Anddrew914/build-your-own-blog-theme#">Current Projects</a></li>
+      <li><a href="https://dash.generalassemb.ly/Anddrew914/build-your-own-business-website">The Workshop</a></li>
+    </ul>
+  </header>
+<h3>Instruments for Sale:</h3>
+<div class="first">
+  <p>1900's German Violin <span class="price">$1000</span><br />
+  <small>A fine german violin. asdf adsf wema;iviewmadjem ajdjfkf ejaja;ek ajdjf emjad kddkdkdkdkdkdkdkdkdk </small></p>
+</div>
+ <button>Buy</button>
+<div class="second">
+  <p>1830's English Cello <span class="price">$8000</span><br />
+  <small>A very fine cello by ...  </small></p>
+</div>
+<button>Buy</button>
+
+<div class="dessert">
+  <p>Mandolin<span class="price">$600</span><br />
+  <small>Lollipop tart cotton candy jelly-o carrot cake apple pie cupcake. Jelly-o bear claw ice cream candy canes.</small></p>
+</div>
+<button>Buy</button>
+
+<script>
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+<script>
+  $("button").on("click", function() {
+    alert("I can't do that yet!");
+  });
+</script>
+</body>

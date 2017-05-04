@@ -18,12 +18,45 @@
   <header>
     <h1>Boston Violins</h1>
     <ul>
-      <li><a href="https://dash.generalassemb.ly/Anddrew914/build-your-own-personal-website">About Me</a></li>
-      <li><a href="https://dash.generalassemb.ly/Anddrew914/build-your-own-blog-theme#">Current Projects</a></li>
-      <li><a href="https://dash.generalassemb.ly/Anddrew914/build-your-own-business-website">The Workshop</a></li>
+      <li><button>Sign-Up</button></li>
+      <li><button>Sign-In</button></li>
+      <li><button>Do-something</button></li>
     </ul>
   </header>
-  <article>
+  <form id="sign-up">
+  <fieldset>
+    <legend>Sign up</legend>
+    <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+    <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+    <input name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
+    <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+  </fieldset>
+</form>
+
+    <form id="sign-in">
+      <fieldset>
+        <legend>Sign in!</legend>
+        <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+        <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+        <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+      </fieldset>
+    </form>
+
+    <form id="change-password">
+      <fieldset>
+        <legend>Change password!</legend>
+        <input type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
+        <input type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
+        <input type="submit" class="btn btn-default" name="submit" value="Change password!">
+      </fieldset>
+    </form>
+
+    <form id="sign-out">
+      <fieldset>
+        <input type="submit" class="btn btn-default" name="submit" value="Log out">
+      </fieldset>
+    </form>
+  <!-- <article>
     <h2>1890's Czech Violin</h2>
     <p>My most recent completed repair was of a late 1800 's violin from Czecheslovakia. The bottom block was crack and needed replacing, the sound post had been glued in (!) with what must have been tite-bond. </p>
     <img src="https://reverb-res.cloudinary.com/image/upload/s--J6Vh4L2A--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_620,q_90,w_620/v1455054873/oe32oqj7qovhlda7gc0b.jpg" width="500">
@@ -42,7 +75,7 @@
       the ribs and top. So my conundrum is when to take the top off and go without a bass for a few weeks. I suspect it won't happen any time soon.</p>
     <img class="noborder" src="http://www.thomasmartin.co.uk/images/bass-repairs/old_father_pollmann/9_double_bass_cleats_complete.jpg" width="500px">
     <button>Like</button>
-  </article>
+  </article> -->
 
 
 </body>
