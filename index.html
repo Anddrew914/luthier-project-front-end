@@ -65,32 +65,43 @@
   </form>
 
   <form id="add-instrument">
-  <fieldset>
-    <legend>Create instrument</legend>
-    <input name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
-    <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
-    <!-- <input name="maker" type="text" value="Maker" onFocus="this.select()"> -->
-    <!-- <br>
+    <fieldset>
+      <legend>Create instrument</legend>
+      <input name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+      <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+      <!-- <input name="maker" type="text" value="Maker" onFocus="this.select()"> -->
+      <!-- <br>
     <textarea name="details "style="margin: 10px 0;"rows="4" cols="50" onFocus="this.select()">
       Instrument details
     </textarea>
     <br> -->
-    <input type="submit" class="btn btn-default" value="Submit">
-  </fieldset>
-</form>
-<form id="view-instruments">
-  <fieldset>
-    <legend>View Instruments</legend>
-    <input type="submit" class="btn btn-default" name="submit" value="Get Instruments">
-  </fieldset>
-</form>
+      <input type="submit" class="btn btn-default" value="Submit">
+    </fieldset>
+  </form>
+  <form id="view-instruments">
+    <fieldset>
+      <legend>View Instruments</legend>
+      <input type="submit" class="btn btn-default" name="submit" value="Get Instruments">
+    </fieldset>
+  </form>
 
-<form id="delete-instrument">
-      <fieldset>
-        <legend>Delete Instrument</legend>
-        <input type="text" name="instrumentId">
-        <input type="submit" class="btn btn-default" name="submit" value="Delete Instrument">
-      </fieldset>
+  <form id="delete-instrument">
+    <fieldset>
+      <legend>Delete Instrument</legend>
+      <input type="text" name="instrumentId">
+      <input type="submit" class="btn btn-default" name="submit" value="Delete Instrument">
+    </fieldset>
+  </form>
+
+  <form id="edit-instrument">
+    <fieldset>
+      <legend>Edit Instrument Data</legend>
+      <input type="text" name="instrumentId" value="Instrument ID">
+      <input name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+      <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" value="Submit">
+    </fieldset>
+  </form>
 
   <!-- <article>
     <h2>1890's Czech Violin</h2>

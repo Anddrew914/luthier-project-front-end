@@ -53,6 +53,14 @@ const deleteInstrumentSuccess = (data) => {
 const deleteInstrumentFailure = (data) => {
   console.log(data + ' failure')
 }
+
+const editInstrumentSuccess = (data) => {
+  console.log(data + ' success')
+}
+
+const editInstrumentFailure = (data) => {
+  console.log(data + ' failure')
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -66,5 +74,7 @@ module.exports = {
   viewInstrumentsSuccess,
   viewInstrumentsFailure,
   deleteInstrumentSuccess,
-  deleteInstrumentFailure
+  deleteInstrumentFailure,
+  editInstrumentSuccess,
+  editInstrumentFailure
 }

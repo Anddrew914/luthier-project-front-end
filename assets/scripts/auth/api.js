@@ -47,7 +47,6 @@ const changePassword = (data) => {
 
 const addInstrument = (data) => {
   console.log('api', data)
-  debugger
   return $.ajax({
     url: config.apiOrigin + '/instruments/',
     method: 'POST',
@@ -70,13 +69,23 @@ const viewInstruments = (data) => {
 }
 
 const deleteInstrument = (data) => {
-  debugger
   return $.ajax({
     url: config.apiOrigin + '/instruments/' + data.instrumentId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
+  })
+}
+
+const editInstrument = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/instruments/' + data.instrumentId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
@@ -87,5 +96,6 @@ module.exports = {
   signIn,
   addInstrument,
   viewInstruments,
-  deleteInstrument
+  deleteInstrument,
+  editInstrument
 }
