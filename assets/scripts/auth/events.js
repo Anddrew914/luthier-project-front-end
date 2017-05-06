@@ -59,6 +59,15 @@ const onViewInstruments = function () {
   .catch(ui.viewInstrumentsFailure)
 }
 
+const onDeleteInstrument = function (event) {
+  console.log("events")
+  const data = getFormFields(this)
+  event.preventDefault()
+  api.deleteInstrument(data)  // this returns an object that gets passed
+  .then(ui.deleteInstrumentSuccess)
+  .catch(ui.deleteInstrumentFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -66,7 +75,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#add-instrument').on('submit', onAddInstrument)
   $('#view-instruments').on('submit', onViewInstruments)
-
+  $('#delete-instrument').on('submit', onDeleteInstrument)
   // $('div').on('click', function () {
   //   $(this).toggleClass('show-login')
   // })

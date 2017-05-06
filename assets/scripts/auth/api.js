@@ -69,11 +69,23 @@ const viewInstruments = (data) => {
   })
 }
 
+const deleteInstrument = (data) => {
+  debugger
+  return $.ajax({
+    url: config.apiOrigin + '/instruments/' + data.instrumentId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   changePassword,
   signOut,
   signIn,
   addInstrument,
-  viewInstruments
+  viewInstruments,
+  deleteInstrument
 }
