@@ -18,21 +18,33 @@ const signInSuccess = (data) => {
 
 const signInFailure = (data) => {
   console.log('ui')
+}
 
+const signOutSuccess = (data) => {
 }
 
 const changePasswordSuccess = (data) => {
   console.log('ui')
-  document.getElementById('change-password').reset()
 }
 
 const changePasswordFailure = () => {
   console.log('ui')
 }
 
-const signOutSuccess = (data) => {
+const addInstrumentSuccess = (data) => {
+  console.log(data)
 }
 
+const addInstrumentFailure = (addInstrumentSuccess) => {
+}
+
+const viewInstrumentSuccess = (data) => {
+  console.log(data + "success")
+}
+
+const viewInstrumentFailure = (data) => {
+  console.log(data + "failure")
+}
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -40,5 +52,9 @@ module.exports = {
   signInFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  signOutSuccess
+  signOutSuccess,
+  addInstrumentSuccess,
+  addInstrumentFailure,
+  viewInstrumentSuccess,
+  viewInstrumentFailure
 }

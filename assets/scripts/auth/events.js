@@ -41,11 +41,35 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onAddInstrument = function (event) {
+  console.log('events')
+  event.preventDefault()
+  const data = getFormFields(event.target)
+
+  api.addInstrument(data)
+    .then(ui.addInstrumentSuccess)
+    .catch(ui.addInstrumentFailure)
+}
+
+const onViewInstruments = function (event) {
+  console.log(event, "events")
+  event.preventDefault()
+  api.viewInstruments()  // this returns an object that gets passed
+  .then(ui.viewInstrumentsSuccess)
+  .catch(ui.viewInstrumentsFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#add-instrument').on('submit', onAddInstrument)
+  $('#view-instruments').on('submit', onViewInstruments)
+
+  // $('div').on('click', function () {
+  //   $(this).toggleClass('show-login')
+  // })
 }
 module.exports = {
   addHandlers

@@ -21,18 +21,6 @@ const signIn = (data) => {
   })
 }
 
-const changePassword = (data) => {
-  console.log('api', data)
-  return $.ajax({
-    url: config.apiOrigin + '/change-password/' + store.user.id,
-    method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data
-  })
-}
-
 const signOut = (data) => {
   console.log('api', data)
   return $.ajax({
@@ -45,9 +33,46 @@ const signOut = (data) => {
   })
 }
 
+const changePassword = (data) => {
+  console.log('api', data)
+  return $.ajax({
+    url: config.apiOrigin + '/change-password/' + store.user.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const addInstrument = (data) => {
+  console.log('api', data)
+  return $.ajax({
+    url: config.apiOrigin + '/instruments/',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const viewInstruments = (data) => {
+  console.log('api', data)
+  return $.ajax({
+    url: config.apiOrigin + '/instruments/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   changePassword,
   signOut,
-  signIn
+  signIn,
+  addInstrument,
+  viewInstruments
 }

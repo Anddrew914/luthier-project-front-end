@@ -16,46 +16,74 @@
 
 <body class="container-fluid">
   <header>
-    <h1>Boston Violins</h1>
-    <ul>
-      <li><button>Sign-Up</button></li>
-      <li><button>Sign-In</button></li>
-      <li><button>Do-something</button></li>
-    </ul>
+    <div id="head-div">
+      <h1>Boston Violins</h1>
+
+      <!-- <p>
+      asdfasdf
+    </p> -->
+
+      <ul>
+        <li><button>Sign-Up</button></li>
+        <li><button>Sign-In</button></li>
+        <li><button>Do-something</button></li>
+      </ul>
+    </div>
   </header>
   <form id="sign-up">
+    <fieldset>
+      <legend>Sign up</legend>
+      <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+      <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+      <input name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+    </fieldset>
+  </form>
+
+  <form id="sign-in">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+      <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+    </fieldset>
+  </form>
+
+  <form id="change-password">
+    <fieldset>
+      <legend>Change password!</legend>
+      <input type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
+      <input type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" name="submit" value="Change password!">
+    </fieldset>
+  </form>
+
+  <form id="sign-out">
+    <fieldset>
+      <input type="submit" class="btn btn-default" name="submit" value="Log out">
+    </fieldset>
+  </form>
+
+  <form id="add-instrument">
   <fieldset>
-    <legend>Sign up</legend>
-    <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
-    <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
-    <input name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
-    <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+    <legend>Create instrument</legend>
+    <input name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+    <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+    <!-- <input name="maker" type="text" value="Maker" onFocus="this.select()"> -->
+    <!-- <br>
+    <textarea name="details "style="margin: 10px 0;"rows="4" cols="50" onFocus="this.select()">
+      Instrument details
+    </textarea>
+    <br> -->
+    <input type="submit" class="btn btn-default" value="Submit">
   </fieldset>
 </form>
-
-    <form id="sign-in">
-      <fieldset>
-        <legend>Sign in!</legend>
-        <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
-        <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
-        <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
-      </fieldset>
-    </form>
-
-    <form id="change-password">
-      <fieldset>
-        <legend>Change password!</legend>
-        <input type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
-        <input type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
-        <input type="submit" class="btn btn-default" name="submit" value="Change password!">
-      </fieldset>
-    </form>
-
-    <form id="sign-out">
-      <fieldset>
-        <input type="submit" class="btn btn-default" name="submit" value="Log out">
-      </fieldset>
-    </form>
+<form id="view-instruments">
+  <fieldset>
+    <legend>View Instruments</legend>
+    <input type="submit" class="btn btn-default" name="submit" value="Get Instruments">
+  </fieldset>
+</form>
   <!-- <article>
     <h2>1890's Czech Violin</h2>
     <p>My most recent completed repair was of a late 1800 's violin from Czecheslovakia. The bottom block was crack and needed replacing, the sound post had been glued in (!) with what must have been tite-bond. </p>
