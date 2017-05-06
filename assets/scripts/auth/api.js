@@ -47,6 +47,7 @@ const changePassword = (data) => {
 
 const addInstrument = (data) => {
   console.log('api', data)
+  debugger
   return $.ajax({
     url: config.apiOrigin + '/instruments/',
     method: 'POST',
@@ -58,7 +59,7 @@ const addInstrument = (data) => {
 }
 
 const viewInstruments = (data) => {
-  console.log('api', data)
+  console.log('api')
   return $.ajax({
     url: config.apiOrigin + '/instruments/',
     method: 'GET',

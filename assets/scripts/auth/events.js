@@ -51,8 +51,8 @@ const onAddInstrument = function (event) {
     .catch(ui.addInstrumentFailure)
 }
 
-const onViewInstruments = function (event) {
-  console.log(event, "events")
+const onViewInstruments = function () {
+  console.log("events")
   event.preventDefault()
   api.viewInstruments()  // this returns an object that gets passed
   .then(ui.viewInstrumentsSuccess)

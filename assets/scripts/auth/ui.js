@@ -10,14 +10,14 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (data) => {
-  console.log('ui')
+  console.log('ui success')
 
   store.user = data.user
   document.getElementById('sign-in').reset()
 }
 
 const signInFailure = (data) => {
-  console.log('ui')
+  console.log('ui failure')
 }
 
 const signOutSuccess = (data) => {
@@ -38,11 +38,12 @@ const addInstrumentSuccess = (data) => {
 const addInstrumentFailure = (addInstrumentSuccess) => {
 }
 
-const viewInstrumentSuccess = (data) => {
-  console.log(data + "success")
+const viewInstrumentsSuccess = (data) => {
+  debugger
+  console.log(data + " success")
 }
 
-const viewInstrumentFailure = (data) => {
+const viewInstrumentsFailure = (data) => {
   console.log(data + "failure")
 }
 module.exports = {
@@ -55,6 +56,6 @@ module.exports = {
   signOutSuccess,
   addInstrumentSuccess,
   addInstrumentFailure,
-  viewInstrumentSuccess,
-  viewInstrumentFailure
+  viewInstrumentsSuccess,
+  viewInstrumentsFailure
 }
