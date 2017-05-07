@@ -16,21 +16,26 @@
 
 <body class="container-fluid">
   <header>
-    <div id="head-div">
       <h1>Boston Violins</h1>
-
-      <!-- <p>
-      asdfasdf
-    </p> -->
-
+      <div class="head-div">
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign up</legend>
+            <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+            <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+            <input name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+        </form>
+      </div>
       <ul>
         <li><button>Sign-Up</button></li>
         <li><button>Sign-In</button></li>
         <li><button>Do-something</button></li>
       </ul>
-    </div>
+
   </header>
-  <form id="sign-up">
+  <!-- <form id="sign-up">
     <fieldset>
       <legend>Sign up</legend>
       <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
@@ -68,14 +73,14 @@
     <fieldset>
       <legend>Create instrument</legend>
       <input name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
-      <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+      <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()"> -->
       <!-- <input name="maker" type="text" value="Maker" onFocus="this.select()"> -->
       <!-- <br>
     <textarea name="details "style="margin: 10px 0;"rows="4" cols="50" onFocus="this.select()">
       Instrument details
     </textarea>
     <br> -->
-      <input type="submit" class="btn btn-default" value="Submit">
+      <!-- <input type="submit" class="btn btn-default" value="Submit">
     </fieldset>
   </form>
   <form id="view-instruments">
@@ -101,7 +106,7 @@
       <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
       <input type="submit" class="btn btn-default" value="Submit">
     </fieldset>
-  </form>
+  </form> -->
 
   <!-- <article>
     <h2>1890's Czech Violin</h2>
@@ -124,7 +129,11 @@
     <button>Like</button>
   </article> -->
 
-
+  <script>
+    $('div').on('click', function() {
+        $(this).toggleClass('show-description');
+    });
+    </script>
 </body>
 
 </html>
