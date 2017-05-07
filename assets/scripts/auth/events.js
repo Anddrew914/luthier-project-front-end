@@ -76,6 +76,18 @@ const onEditInstrument = function (event) {
     .catch(ui.editInstrumentFailure)
 }
 
+const onRevealSignUp = function () {
+  $('form#sign-up').animate({
+    height: 'toggle'
+  }, 200, function () {})
+}
+
+const onRevealSignIn = function () {
+  $('form#sign-in').animate({
+    height: 'toggle'
+  }, 200, function () {})
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -85,9 +97,9 @@ const addHandlers = () => {
   $('#view-instruments').on('submit', onViewInstruments)
   $('#delete-instrument').on('submit', onDeleteInstrument)
   $('#edit-instrument').on('submit', onEditInstrument)
-  // $('div').on('click', function () {
-  //   $(this).toggleClass('show-login')
-  // })
+  $('button#nav-sign-up').on('click', onRevealSignUp)
+
+  $('button#nav-sign-in').on('click', onRevealSignIn)
 }
 module.exports = {
   addHandlers

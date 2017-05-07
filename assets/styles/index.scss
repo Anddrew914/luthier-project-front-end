@@ -10,27 +10,43 @@ header {
   background-size: cover;
   color: white;
 }
+
 legend {
   border: 0;
 }
-fieldset {
-  align-items: center;
-  // padding-left: 200px;
+
+.form-control {
+  text-align: center;
+  color: white;
+  width: 200px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, .3);
+
 }
-input {
-  display: list-item;
-  margin: 10px auto;
-  background-color: rgba(255,255,255,.60);
+
+form#sign-up {
+  display: none;
+  position: absolute;
+  left: 135px;
+}
+
+form#sign-in {
+  display: none;
+  position: absolute;
+  left: 135px;
+}
+.submit {
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .head-div {
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 50%;
-  margin: 10% auto;
+  margin: 10% 25%;
   top: 0;
-  background-color: rgba(0,0,0,.50);
-  visibility: hidden;
+  // background-color: rgba(0,0,0,.);
+
 }
 a {
   color: white;
@@ -57,12 +73,11 @@ li {
   padding: 0px 10px 0px 10px;
 }
 
-// #show-login
-// article {
-//   max-width: 500px;
-//   padding: 20px;
-//   margin: 0 auto;
-// }
+#show-login
+.head-div {
+  visibility: block;
+
+}
 .noborder {
   border: 7px solid black;
 }
