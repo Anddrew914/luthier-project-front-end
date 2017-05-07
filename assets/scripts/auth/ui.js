@@ -11,9 +11,14 @@ const signUpFailure = () => {
 
 const signInSuccess = (data) => {
   console.log('ui success')
-
   store.user = data.user
   document.getElementById('sign-in').reset()
+  $('button#nav-add-instrument').show()
+  $('button#nav-sign-up').hide()
+  $('button#nav-sign-in').hide()
+  $('form#sign-in').hide()
+  $('button#sign-out').show()
+  $('button#view-instruments').show()
 }
 
 const signInFailure = (data) => {
@@ -32,6 +37,8 @@ const changePasswordFailure = () => {
 }
 
 const addInstrumentSuccess = (data) => {
+  $('#instruments-div').text('')
+  $('#instruments-div').load('http://localhost:4741/instruments')
   console.log(data)
 }
 
@@ -40,6 +47,8 @@ const addInstrumentFailure = (addInstrumentSuccess) => {
 
 const viewInstrumentsSuccess = (data) => {
   console.log(data + ' success')
+  $('#instruments-div').text('')
+  $('#instruments-div').load('http://localhost:4741/instruments')
 }
 
 const viewInstrumentsFailure = (data) => {
@@ -61,6 +70,7 @@ const editInstrumentSuccess = (data) => {
 const editInstrumentFailure = (data) => {
   console.log(data + ' failure')
 }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
