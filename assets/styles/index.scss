@@ -2,11 +2,51 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 header {
+  position: relative;
   height: 450px;
+  width: 100%;
   text-align: center;
   background: url('../images/Luthier-Project-Header.jpg');
   background-size: cover;
   color: white;
+}
+
+legend {
+  border: 0;
+}
+
+.form-control {
+  text-align: center;
+  color: white;
+  width: 200px;
+  margin: 20px auto;
+  background-color: rgba(0, 0, 0, .3);
+
+}
+
+form#sign-up {
+  display: none;
+  position: absolute;
+  left: 135px;
+}
+
+form#sign-in {
+  display: none;
+  position: absolute;
+  left: 135px;
+}
+.submit {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.head-div {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  margin: 10% 25%;
+  top: 0;
+  // background-color: rgba(0,0,0,.);
+
 }
 a {
   color: white;
@@ -23,9 +63,10 @@ img {
   border-radius: 20px;
 }
 ul {
-  margin-top: 335px;
+  // margin-top: 335px;
   padding: 10px;
   background: rgba(0,0,0,0.5);
+  margin-top: 329px;
 }
 li {
   display: inline;
@@ -33,10 +74,9 @@ li {
 }
 
 #show-login
-article {
-  max-width: 500px;
-  padding: 20px;
-  margin: 0 auto;
+.head-div {
+  visibility: block;
+
 }
 .noborder {
   border: 7px solid black;
