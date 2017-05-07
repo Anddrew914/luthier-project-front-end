@@ -12,6 +12,7 @@
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
 </head>
 
 <body class="container-fluid">
@@ -26,22 +27,34 @@
           <input class="form-control" name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
           <input class="submit" type="submit" name="submit" value="Sign up">
         </form>
-      <form id="sign-in">
+
+        <form id="sign-in">
           <legend></legend>
           <input class="form-control" name="credentials[email]" type="text" value="Email" onFocus="this.select()">
           <input class="form-control" name="credentials[password]" type="password" value="Password" onFocus="this.select()">
-          <input class="submit"type="submit" class="btn btn-default" name="submit" value="Sign in!">
-        </fieldset>
-      </form>
+          <input class="submit" type="submit" class="btn btn-default" name="submit" value="Sign in!">
+        </form>
+
+        <form id="add-instrument">
+          <legend>Create instrument</legend>
+          <input class="form-control" name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+          <input class="form-control number" name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+          <input class="submit" type="submit" class="btn btn-default" value="Submit">
+        </form>
+      </fieldset>
     </div>
     <ul>
       <li><button id="nav-sign-up">Sign-Up</button></li>
       <li><button id="nav-sign-in">Sign-In</button></li>
-      <li><button>Do-something</button></li>
+      <li><button id="nav-add-instrument">Add Instrument</button></li>
+      <li><button id="sign-out">Sign Out</button></li>
+      <li><button id="view-instruments">View All Instrument</button></li>
     </ul>
     </div>
 
   </header>
+  <div id="instruments-div">
+  </div>
   <!-- <form id="sign-up">
     <fieldset>
       <legend>Sign up</legend>

@@ -35,6 +35,27 @@ form#sign-in {
   position: absolute;
   left: 135px;
 }
+
+form#add-instrument {
+  display: none;
+  position: absolute;
+  left: 135px;
+}
+
+button#nav-add-instrument {
+  display: none;
+}
+
+button#sign-out {
+  display: none;
+}
+
+button#view-instruments {
+  display: none;
+}
+input.form-control.number {
+  color: white;
+}
 .submit {
   background-color: rgba(0, 0, 0, .8);
 }
@@ -73,14 +94,6 @@ li {
   padding: 0px 10px 0px 10px;
 }
 
-#show-login
-.head-div {
-  visibility: block;
-
-}
-.noborder {
-  border: 7px solid black;
-}
 @media (max-width: 500px) {
   h1 {
     font-size: 36px;
@@ -90,4 +103,10 @@ li {
     padding: 5px;
     display: block;
   }
+}
+
+
+#instruments-div {
+  height: 500px ;
+  width: auto;
 }

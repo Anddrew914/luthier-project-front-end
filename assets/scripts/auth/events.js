@@ -80,26 +80,38 @@ const onRevealSignUp = function () {
   $('form#sign-up').animate({
     height: 'toggle'
   }, 200, function () {})
+  $('form#sign-in').hide()
+  $('form#add-instrument').hide()
 }
 
 const onRevealSignIn = function () {
   $('form#sign-in').animate({
     height: 'toggle'
   }, 200, function () {})
+  $('form#sign-up').hide()
+  $('form#add-instrument').hide()
+}
+
+const onRevealAddInstrument = function () {
+  $('form#add-instrument').animate({
+    height: 'toggle'
+  }, 200, function () {})
+  $('form#sign-in').hide()
+  $('form#sign-up').hide()
 }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
-  $('#sign-out').on('submit', onSignOut)
+  $('button#sign-out').on('click', onSignOut)
   $('#add-instrument').on('submit', onAddInstrument)
-  $('#view-instruments').on('submit', onViewInstruments)
+  $('#view-instruments').on('click', onViewInstruments)
   $('#delete-instrument').on('submit', onDeleteInstrument)
   $('#edit-instrument').on('submit', onEditInstrument)
   $('button#nav-sign-up').on('click', onRevealSignUp)
-
   $('button#nav-sign-in').on('click', onRevealSignIn)
+  $('button#nav-add-instrument').on('click', onRevealAddInstrument)
 }
 module.exports = {
   addHandlers
