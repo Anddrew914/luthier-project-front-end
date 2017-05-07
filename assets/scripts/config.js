@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://luthier-api.herokuapp.com'
+    production: 'https://ga-wdi-boston.herokuapp.com'
   }
 }
 
