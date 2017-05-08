@@ -1,5 +1,16 @@
 'use strict'
 const store = require('../store.js')
+const showInstrumentsTemplate = require('../templates/instruments.handlebars')
+const api = require('./api.js')
+
+const refreshInstrumentDiv = () => {
+  console.log("refreshInstrumentDiv")
+  api.viewInstruments()  // this returns an object that gets passed
+  .then(viewInstrumentsSuccess)
+  const showInstrumentsHtml = showInstrumentsTemplate({ instruments: store.instruments })
+  $('#instruments-div').text('')
+  $('#instruments-div').append(showInstrumentsHtml)
+}
 
 const signUpSuccess = (data) => {
   $('form#sign-in').show()
@@ -40,8 +51,7 @@ const changePasswordFailure = () => {
 }
 
 const addInstrumentSuccess = (data) => {
-  $('#instruments-div').text('')
-  $('#instruments-div').load('http://localhost:4741/instruments')
+  refreshInstrumentDiv()
   console.log(data)
 }
 
@@ -50,8 +60,15 @@ const addInstrumentFailure = (addInstrumentSuccess) => {
 
 const viewInstrumentsSuccess = (data) => {
   console.log(data + ' success')
+  store.instruments = data.instruments
+  const showInstrumentsHtml = showInstrumentsTemplate({ instruments: data.instruments })
   $('#instruments-div').text('')
-  $('#instruments-div').load('http://localhost:4741/instruments')
+  $('#instruments-div').append(showInstrumentsHtml)
+  $('#delete-instrument').on('click', function () {
+    api.deleteInstrument(this.dataset.id)
+    .then(deleteInstrumentSuccess)
+    .catch(deleteInstrumentFailure)
+  })
 }
 
 const viewInstrumentsFailure = (data) => {
@@ -59,7 +76,8 @@ const viewInstrumentsFailure = (data) => {
 }
 
 const deleteInstrumentSuccess = (data) => {
-  console.log(data + ' success')
+  console.log("delete" + ' success')
+  refreshInstrumentDiv()
 }
 
 const deleteInstrumentFailure = (data) => {

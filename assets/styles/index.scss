@@ -27,19 +27,28 @@ legend {
 form#sign-up {
   display: none;
   position: absolute;
-  left: 135px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 form#sign-in {
   display: none;
   position: absolute;
-  left: 135px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 form#add-instrument {
   display: none;
   position: absolute;
-  left: 135px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 
 button#nav-add-instrument {
@@ -88,6 +97,7 @@ ul {
   padding: 10px;
   background: rgba(0,0,0,0.5);
   margin-top: 329px;
+  text-align: center;
 }
 li {
   display: inline;
@@ -105,8 +115,10 @@ li {
   }
 }
 
-
+article {
+  text-align: center;
+}
 #instruments-div {
-  height: 500px ;
+  // height: 500px ;
   width: auto;
 }
