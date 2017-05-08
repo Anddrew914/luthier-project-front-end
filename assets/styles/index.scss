@@ -53,7 +53,7 @@ button#sign-out {
 button#view-instruments {
   display: none;
 }
-input.form-control.number {
+input.form-control[type='number'] {
   color: white;
 }
 .submit {

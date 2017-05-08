@@ -2,6 +2,8 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
+  $('form#sign-in').show()
+  $('form#sign-up').hide()
   console.log('ui')
 }
 
@@ -26,6 +28,7 @@ const signInFailure = (data) => {
 }
 
 const signOutSuccess = (data) => {
+  $('#instruments-div').text('')
 }
 
 const changePasswordSuccess = (data) => {
