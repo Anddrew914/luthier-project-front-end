@@ -60,6 +60,7 @@ const changePasswordFailure = () => {
 }
 
 const addInstrumentSuccess = (data) => {
+  $('div.error-handling').text('Instrument Created')
   refreshInstrumentDiv()
 }
 
