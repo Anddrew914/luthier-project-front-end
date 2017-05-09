@@ -17,11 +17,13 @@ const refreshInstrumentDiv = () => {
 const signUpSuccess = (data) => {
   $('form#sign-in').show()
   $('form#sign-up').hide()
+  $('#instruments-div').text('')
   console.log('ui')
 }
 
 const signUpFailure = () => {
   console.log(' ui Error')
+  $('#instruments-div').text('Sign up error')
 }
 
 const signInSuccess = (data) => {
