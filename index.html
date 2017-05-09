@@ -21,6 +21,12 @@
     <div class="head-div input-group-large">
       <fieldset id=head-div-field>
 
+        <form id="change-password">
+            <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
+            <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
+            <input class="submit" type="submit" name="submit" value="Change password!">
+        </form>
+
         <form id="sign-up">
           <input class="form-control" name="credentials[email]" type="text" value="Email" onFocus="this.select()">
           <input class="form-control" name="credentials[password]" type="password" value="Password" onFocus="this.select()">
@@ -58,6 +64,7 @@
       <li><button id="sign-out">Sign Out</button></li>
       <li><button id="view-instruments">View All Instruments</button></li>
       <li><button id="nav-edit-instrument">Edit Instrument Listing</button></li>
+      <li><button id="nav-change-password">Change password</button></li>
     </ul>
 
   </header>

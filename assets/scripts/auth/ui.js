@@ -18,6 +18,7 @@ const signUpSuccess = (data) => {
   $('form#sign-in').show()
   $('form#sign-up').hide()
   $('#instruments-div').text('')
+  $('div.error-handling').text('')
 }
 
 const signUpFailure = () => {
@@ -33,6 +34,8 @@ const signInSuccess = (data) => {
   $('form#sign-in').hide()
   $('button#sign-out').show()
   $('button#view-instruments').show()
+  $('button#nav-change-password').show()
+  $('div.error-handling').text('')
 }
 
 const signInFailure = (data) => {
@@ -43,16 +46,19 @@ const signOutSuccess = (data) => {
   $('#instruments-div').text('')
   $('form#add-instrument').hide()
   $('form#edit-instrument').hide()
+  $('form#change-password').hide()
   $('button#nav-sign-up').show()
   $('button#nav-sign-in').show()
   $('button#nav-add-instrument').hide()
   $('button#nav-edit-instrument').hide()
   $('button#view-instruments').hide()
   $('button#sign-out').hide()
+  $('button#nav-change-password').hide()
+  $('div.error-handling').text('')
 }
 
 const changePasswordSuccess = (data) => {
-  $('div.error-handling').text('Passowrd changed')
+  $('div.error-handling').text('Password changed')
 }
 
 const changePasswordFailure = () => {

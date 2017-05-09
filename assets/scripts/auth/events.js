@@ -42,7 +42,6 @@ const onSignOut = function (event) {
 }
 
 const onAddInstrument = function (event) {
-  console.log('events')
   event.preventDefault()
   const data = getFormFields(event.target)
 
@@ -94,6 +93,16 @@ const onRevealSignIn = function () {
   $('form#add-instrument').hide()
 }
 
+const onRevealChangePassword = function () {
+  $('form#change-password').animate({
+    height: 'toggle'
+  }, 200, function () {})
+  $('form#sign-up').hide()
+  $('form#add-instrument').hide()
+  $('form#edit-instrument').hide()
+  $('form#sign-in').hide()
+}
+
 const onRevealAddInstrument = function () {
   $('form#add-instrument').animate({
     height: 'toggle'
@@ -101,6 +110,7 @@ const onRevealAddInstrument = function () {
   $('form#sign-in').hide()
   $('form#sign-up').hide()
   $('form#edit-instrument').hide()
+  $('form#change-password').hide()
 
 }
 
@@ -119,6 +129,7 @@ const addHandlers = () => {
   $('#edit-instrument').on('submit', onEditInstrument)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
+  $('button#nav-change-password').on('click', onRevealChangePassword)
   $('button#sign-out').on('click', onSignOut)
   $('#add-instrument').on('submit', onAddInstrument)
   $('#view-instruments').on('click', onViewInstruments)
