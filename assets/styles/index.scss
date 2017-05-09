@@ -75,6 +75,18 @@ button#view-instruments {
 button#nav-edit-instrument {
   display: none;
 }
+
+div.error-handling {
+    position: absolute;
+    bottom: 19%;
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+    right: 0;
+
+    font-size: 25px;
+}
+
 input.form-control[type='number'] {
   color: white;
 }
@@ -106,7 +118,6 @@ img {
   border-radius: 20px;
 }
 ul {
-  // margin-top: 335px;
   color: black;
   padding: 10px;
   background: rgba(0,0,0,0.5);

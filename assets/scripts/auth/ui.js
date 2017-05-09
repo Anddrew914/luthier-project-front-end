@@ -5,7 +5,7 @@ const api = require('./api.js')
 const getFormFields = require(`../../../lib/get-form-fields`)
 
 const refreshInstrumentDiv = () => {
-  console.log("refreshInstrumentDiv")
+
   api.viewInstruments()  // this returns an object that gets passed
   .then(viewInstrumentsSuccess)
   const showInstrumentsHtml = showInstrumentsTemplate({ instruments: store.instruments })
@@ -18,16 +18,13 @@ const signUpSuccess = (data) => {
   $('form#sign-in').show()
   $('form#sign-up').hide()
   $('#instruments-div').text('')
-  console.log('ui')
 }
 
 const signUpFailure = () => {
-  console.log(' ui Error')
-  $('#instruments-div').text('Sign up error')
+  $('div.error-handling').text('Sign up error')
 }
 
 const signInSuccess = (data) => {
-  console.log('ui success')
   store.user = data.user
   document.getElementById('sign-in').reset()
   $('button#nav-add-instrument').show()
@@ -39,7 +36,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (data) => {
-  console.log('ui failure')
+  $('div.error-handling').text('Sign in error')
 }
 
 const signOutSuccess = (data) => {
@@ -55,23 +52,22 @@ const signOutSuccess = (data) => {
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('ui')
+  $('div.error-handling').text('Passowrd changed')
 }
 
 const changePasswordFailure = () => {
-  console.log('ui')
+  $('div.error-handling').text('Change Password error')
 }
 
 const addInstrumentSuccess = (data) => {
   refreshInstrumentDiv()
-  console.log(data)
 }
 
 const addInstrumentFailure = (addInstrumentSuccess) => {
+  $('div.error-handling').text('Add instrument error')
 }
 
 const viewInstrumentsSuccess = (data) => {
-  console.log(data + ' success')
   store.instruments = data.instruments
   const showInstrumentsHtml = showInstrumentsTemplate({ instruments: data.instruments })
   $('button#nav-edit-instrument').show()
@@ -88,25 +84,23 @@ const viewInstrumentsSuccess = (data) => {
 }
 
 const viewInstrumentsFailure = (data) => {
-  console.log(data + 'failure')
+
 }
 
 const deleteInstrumentSuccess = (data) => {
-  console.log("delete" + ' success')
   refreshInstrumentDiv()
 }
 
 const deleteInstrumentFailure = (data) => {
-  console.log(data + ' failure')
+  $('div.error-handling').text('Delete instrument error')
 }
 
 const editInstrumentSuccess = (data) => {
   refreshInstrumentDiv()
-  console.log(data + ' success')
 }
 
 const editInstrumentFailure = (data) => {
-  console.log(data + ' failure')
+  $('div.error-handling').text('Instrument edit error')
 }
 
 module.exports = {
