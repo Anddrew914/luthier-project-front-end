@@ -40,6 +40,11 @@ const signInFailure = (data) => {
 
 const signOutSuccess = (data) => {
   $('#instruments-div').text('')
+  $('button#nav-sign-up').show()
+  $('button#nav-sign-in').show()
+  $('button#nav-add-instrument').hide()
+  $('button#view-instruments').hide()
+  $('button#sign-out').hide()
 }
 
 const changePasswordSuccess = (data) => {
