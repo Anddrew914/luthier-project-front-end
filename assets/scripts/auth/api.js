@@ -68,9 +68,9 @@ const viewInstruments = (data) => {
   })
 }
 
-const deleteInstrument = (dataset) => {
+const deleteInstrument = (instrumentPostId) => {
   return $.ajax({
-    url: config.apiOrigin + '/instruments/' + dataset,
+    url: config.apiOrigin + '/instruments/' + instrumentPostId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

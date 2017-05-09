@@ -42,10 +42,12 @@ const signInFailure = (data) => {
 
 const signOutSuccess = (data) => {
   $('#instruments-div').text('')
-  $('form#add-instrument').text('')
+  $('form#add-instrument').hide()
+  $('form#edit-instrument').hide()
   $('button#nav-sign-up').show()
   $('button#nav-sign-in').show()
   $('button#nav-add-instrument').hide()
+  $('button#nav-edit-instrument').hide()
   $('button#view-instruments').hide()
   $('button#sign-out').hide()
 }
@@ -73,19 +75,14 @@ const viewInstrumentsSuccess = (data) => {
   $('button#nav-edit-instrument').show()
   $('#instruments-div').text('')
   $('#instruments-div').append(showInstrumentsHtml)
-  $('#delete-instrument').on('click', function () {
-    api.deleteInstrument(this.dataset.id)
-    .then(deleteInstrumentSuccess)
-    .catch(deleteInstrumentFailure)
-  })
-  $('#edit-instrument').on('submit', function (event) {
-    console.log('editevents')
-    event.preventDefault()
-    const data = getFormFields(event.target)
-    api.editInstrument(data)
-      .then(editInstrumentSuccess)
-      .catch(editInstrumentFailure)
-  })
+  // $('#edit-instrument').on('submit', function (event) {
+  //   console.log('editevents')
+  //   event.preventDefault()
+  //   const data = getFormFields(event.target)
+  //   api.editInstrument(data)
+  //     .then(editInstrumentSuccess)
+  //     .catch(editInstrumentFailure)
+  // })
 }
 
 const viewInstrumentsFailure = (data) => {

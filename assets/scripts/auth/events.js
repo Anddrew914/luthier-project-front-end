@@ -59,24 +59,24 @@ const onViewInstruments = function () {
   .catch(ui.viewInstrumentsFailure)
 }
 
-// const onDeleteInstrument = function (event) {
-//   console.log("events")
-//   // const data = getFormFields(this)
-//   const instrumentPostId = $(event.target).attr('data.id')
-//   event.preventDefault()
-//   api.deleteInstrument(instrumentPostId)  // this returns an object that gets passed
-//   .then(ui.deleteInstrumentSuccess)
-//   .catch(ui.deleteInstrumentFailure)
-// }
+const onDeleteInstrument = function (event) {
+  console.log("events")
+  // const data = getFormFields(this)
+  const instrumentPostId = event.target.dataset.id
+  event.preventDefault()
+  api.deleteInstrument(instrumentPostId)  // this returns an object that gets passed
+  .then(ui.deleteInstrumentSuccess)
+  .catch(ui.deleteInstrumentFailure)
+}
 
-// const onEditInstrument = function (event) {
-//   console.log('editevents')
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   api.editInstrument(data)
-//     .then(ui.editInstrumentSuccess)
-//     .catch(ui.editInstrumentFailure)
-// }
+const onEditInstrument = function (event) {
+  console.log('editevents')
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.editInstrument(data)
+    .then(ui.editInstrumentSuccess)
+    .catch(ui.editInstrumentFailure)
+}
 
 const onRevealSignUp = function () {
   $('form#sign-up').animate({
@@ -100,6 +100,8 @@ const onRevealAddInstrument = function () {
   }, 200, function () {})
   $('form#sign-in').hide()
   $('form#sign-up').hide()
+  $('form#edit-instrument').hide()
+
 }
 
 const onRevealEdit = function () {
@@ -108,10 +110,13 @@ const onRevealEdit = function () {
   }, 200, function () {})
   $('form#sign-in').hide()
   $('form#sign-up').hide()
+  $('form#add-instrument').hide()
 }
 
 const addHandlers = () => {
+  $('#instruments-div').on('click', '#delete-instrument', onDeleteInstrument)
   $('#sign-up').on('submit', onSignUp)
+  $('#edit-instrument').on('submit', onEditInstrument)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('button#sign-out').on('click', onSignOut)
