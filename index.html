@@ -20,8 +20,8 @@
     <h1>Boston Violins</h1>
     <div class="head-div input-group-large">
       <fieldset id=head-div-field>
+
         <form id="sign-up">
-          <legend></legend>
           <input class="form-control" name="credentials[email]" type="text" value="Email" onFocus="this.select()">
           <input class="form-control" name="credentials[password]" type="password" value="Password" onFocus="this.select()">
           <input class="form-control" name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
@@ -29,18 +29,24 @@
         </form>
 
         <form id="sign-in">
-          <legend></legend>
           <input class="form-control" name="credentials[email]" type="text" value="Email" onFocus="this.select()">
           <input class="form-control" name="credentials[password]" type="password" value="Password" onFocus="this.select()">
-          <input class="submit" type="submit" class="btn btn-default" name="submit" value="Sign in!">
+          <input class="submit" type="submit" name="submit" value="Sign in!">
         </form>
 
         <form id="add-instrument">
-          <legend>Create instrument</legend>
           <input class="form-control" name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
           <input class="form-control number" name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
-          <input class="submit" type="submit" class="btn btn-default" value="Submit">
+          <input class="submit" ype="submit" value="Submit">
         </form>
+
+        <form id="edit-instrument">
+          <input class="form-control" type="text" name="instrumentId" value="Instrument ID">
+          <input class="form-control" name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+          <input class="form-control" name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+          <input class="submit" type="submit"  value="Submit">
+        </form>
+
       </fieldset>
     </div>
     <ul>
@@ -48,9 +54,9 @@
       <li><button id="nav-sign-in">Sign-In</button></li>
       <li><button id="nav-add-instrument">Add Instrument</button></li>
       <li><button id="sign-out">Sign Out</button></li>
-      <li><button id="view-instruments">View All Instrument</button></li>
+      <li><button id="view-instruments">View All Instruments</button></li>
+      <li><button id="nav-edit-instrument">Edit Instrument Listing</button></li>
     </ul>
-    </div>
 
   </header>
   <div id="instruments-div">

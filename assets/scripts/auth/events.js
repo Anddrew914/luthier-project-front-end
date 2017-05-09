@@ -52,30 +52,31 @@ const onAddInstrument = function (event) {
 }
 
 const onViewInstruments = function () {
-  console.log("events")
+  console.log('events')
   event.preventDefault()
   api.viewInstruments()  // this returns an object that gets passed
   .then(ui.viewInstrumentsSuccess)
   .catch(ui.viewInstrumentsFailure)
 }
 
-const onDeleteInstrument = function (event) {
-  console.log("events")
-  // const data = getFormFields(this)
-  const instrumentPostId = $(event.target).attr('data.id')
-  event.preventDefault()
-  api.deleteInstrument(instrumentPostId)  // this returns an object that gets passed
-  .then(ui.deleteInstrumentSuccess)
-  .catch(ui.deleteInstrumentFailure)
-}
+// const onDeleteInstrument = function (event) {
+//   console.log("events")
+//   // const data = getFormFields(this)
+//   const instrumentPostId = $(event.target).attr('data.id')
+//   event.preventDefault()
+//   api.deleteInstrument(instrumentPostId)  // this returns an object that gets passed
+//   .then(ui.deleteInstrumentSuccess)
+//   .catch(ui.deleteInstrumentFailure)
+// }
 
-const onEditInstrument = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.editInstrument(data)
-    .then(ui.editInstrumentSuccess)
-    .catch(ui.editInstrumentFailure)
-}
+// const onEditInstrument = function (event) {
+//   console.log('editevents')
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   api.editInstrument(data)
+//     .then(ui.editInstrumentSuccess)
+//     .catch(ui.editInstrumentFailure)
+// }
 
 const onRevealSignUp = function () {
   $('form#sign-up').animate({
@@ -101,6 +102,14 @@ const onRevealAddInstrument = function () {
   $('form#sign-up').hide()
 }
 
+const onRevealEdit = function () {
+  $('form#edit-instrument').animate({
+    height: 'toggle'
+  }, 200, function () {})
+  $('form#sign-in').hide()
+  $('form#sign-up').hide()
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -108,10 +117,10 @@ const addHandlers = () => {
   $('button#sign-out').on('click', onSignOut)
   $('#add-instrument').on('submit', onAddInstrument)
   $('#view-instruments').on('click', onViewInstruments)
-  $('#edit-instrument').on('submit', onEditInstrument)
   $('button#nav-sign-up').on('click', onRevealSignUp)
   $('button#nav-sign-in').on('click', onRevealSignIn)
   $('button#nav-add-instrument').on('click', onRevealAddInstrument)
+  $('button#nav-edit-instrument').on('click', onRevealEdit)
 }
 module.exports = {
   addHandlers
