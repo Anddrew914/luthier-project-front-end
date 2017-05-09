@@ -6,7 +6,6 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = function (event) {
-  console.log('events')
   const data = getFormFields(this)
   event.preventDefault()
   api.signUp(data)
@@ -15,7 +14,6 @@ const onSignUp = function (event) {
 }
 
 const onSignIn = function (event) {
-  console.log('events')
   const data = getFormFields(this)
   event.preventDefault()
   api.signIn(data)
@@ -24,7 +22,6 @@ const onSignIn = function (event) {
 }
 
 const onChangePassword = function (event) {
-  console.log('events')
   event.preventDefault()
   const data = getFormFields(event.target)
 
@@ -51,7 +48,6 @@ const onAddInstrument = function (event) {
 }
 
 const onViewInstruments = function () {
-  console.log('events')
   event.preventDefault()
   api.viewInstruments()  // this returns an object that gets passed
   .then(ui.viewInstrumentsSuccess)
@@ -59,7 +55,6 @@ const onViewInstruments = function () {
 }
 
 const onDeleteInstrument = function (event) {
-  console.log("events")
   // const data = getFormFields(this)
   const instrumentPostId = event.target.dataset.id
   event.preventDefault()
@@ -69,7 +64,6 @@ const onDeleteInstrument = function (event) {
 }
 
 const onEditInstrument = function (event) {
-  console.log('editevents')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.editInstrument(data)

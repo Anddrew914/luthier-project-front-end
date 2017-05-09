@@ -2,9 +2,7 @@
 
 const config = require('../config.js')
 const store = require('../store.js')
-
 const signUp = (data) => {
-  console.log('api', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
@@ -13,7 +11,6 @@ const signUp = (data) => {
 }
 
 const signIn = (data) => {
-  console.log('api', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -22,7 +19,6 @@ const signIn = (data) => {
 }
 
 const signOut = (data) => {
-  console.log('api', data)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -34,7 +30,6 @@ const signOut = (data) => {
 }
 
 const changePassword = (data) => {
-  console.log('api', data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
@@ -46,7 +41,6 @@ const changePassword = (data) => {
 }
 
 const addInstrument = (data) => {
-  console.log('api', data)
   return $.ajax({
     url: config.apiOrigin + '/instruments/',
     method: 'POST',
@@ -58,7 +52,6 @@ const addInstrument = (data) => {
 }
 
 const viewInstruments = (data) => {
-  console.log('api')
   return $.ajax({
     url: config.apiOrigin + '/instruments/',
     method: 'GET',
