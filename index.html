@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Boston Violins</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/index.scss">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+</head>
+
+<body class="container-fluid">
+  <header>
+    <h1>Boston Violins</h1>
+    <div class="head-div input-group-large">
+      <fieldset id=head-div-field>
+
+        <form id="change-password">
+            <input class="form-control" type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
+            <input class="form-control" type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
+            <input class="submit" type="submit" name="submit" value="Change password!">
+        </form>
+
+        <form id="sign-up">
+          <input class="form-control" name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+          <input class="form-control" name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+          <input class="form-control" name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
+          <input class="submit" type="submit" name="submit" value="Sign up">
+        </form>
+
+        <form id="sign-in">
+          <input class="form-control" name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+          <input class="form-control" name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+          <input class="submit" type="submit" name="submit" value="Sign in!">
+        </form>
+
+        <form id="add-instrument">
+          <input class="form-control" name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+          <input class="form-control number" name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+          <input class="submit" type="submit" value="Submit">
+        </form>
+
+        <form id="edit-instrument">
+          <input class="form-control" type="text" name="instrumentId" value="Instrument ID">
+          <input class="form-control" name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+          <input class="form-control" name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+          <input class="submit" type="submit"  value="Submit">
+        </form>
+
+      </fieldset>
+    </div>
+    <div class='error-handling'>
+    </div>
+    <ul>
+      <li><button id="nav-sign-up">Sign-Up</button></li>
+      <li><button id="nav-sign-in">Sign-In</button></li>
+      <li><button id="nav-add-instrument">Add Instrument</button></li>
+      <li><button id="sign-out">Sign Out</button></li>
+      <li><button id="view-instruments">View All Instruments</button></li>
+      <li><button id="nav-edit-instrument">Edit Instrument Listing</button></li>
+      <li><button id="nav-change-password">Change password</button></li>
+    </ul>
+
+  </header>
+  <div class='divy'id="instruments-div">
+  </div>
+  <!-- <form id="sign-up">
+    <fieldset>
+      <legend>Sign up</legend>
+      <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+      <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+      <input name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+    </fieldset>
+  </form>
+
+  <form id="sign-in">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+      <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+    </fieldset>
+  </form>
+
+  <form id="change-password">
+    <fieldset>
+      <legend>Change password!</legend>
+      <input type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
+      <input type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" name="submit" value="Change password!">
+    </fieldset>
+  </form>
+
+  <form id="sign-out">
+    <fieldset>
+      <input type="submit" class="btn btn-default" name="submit" value="Log out">
+    </fieldset>
+  </form>
+
+  <form id="add-instrument">
+    <fieldset>
+      <legend>Create instrument</legend>
+      <input name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+      <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()"> -->
+  <!-- <input name="maker" type="text" value="Maker" onFocus="this.select()"> -->
+  <!-- <br>
+    <textarea name="details "style="margin: 10px 0;"rows="4" cols="50" onFocus="this.select()">
+      Instrument details
+    </textarea>
+    <br> -->
+  <!-- <input type="submit" class="btn btn-default" value="Submit">
+    </fieldset>
+  </form>
+  <form id="view-instruments">
+    <fieldset>
+      <legend>View Instruments</legend>
+      <input type="submit" class="btn btn-default" name="submit" value="Get Instruments">
+    </fieldset>
+  </form>
+
+  <form id="delete-instrument">
+    <fieldset>
+      <legend>Delete Instrument</legend>
+      <input type="text" name="instrumentId">
+      <input type="submit" class="btn btn-default" name="submit" value="Delete Instrument">
+    </fieldset>
+  </form>
+
+  <form id="edit-instrument">
+    <fieldset>
+      <legend>Edit Instrument Data</legend>
+      <input type="text" name="instrumentId" value="Instrument ID">
+      <input name="instrument[instrument_type]" type="text" value="Instrument type" onFocus="this.select()">
+      <input name="instrument[price]" type="number" step="any" placeholder="Price" onFocus="this.select()">
+      <input type="submit" class="btn btn-default" value="Submit">
+    </fieldset>
+  </form> -->
+
+  <!-- <article>
+    <h2>1890's Czech Violin</h2>
+    <p>My most recent completed repair was of a late 1800 's violin from Czecheslovakia. The bottom block was crack and needed replacing, the sound post had been glued in (!) with what must have been tite-bond. </p>
+    <img src="https://reverb-res.cloudinary.com/image/upload/s--J6Vh4L2A--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_620,q_90,w_620/v1455054873/oe32oqj7qovhlda7gc0b.jpg" width="500">
+    <button>Like</button>
+  </article>
+  <article>
+    <h2>Next Up!</h2>
+    <p>I'm currently working on two separate repairs. A cello which needs top crack repaired and a new endpin. I'm also working on a very nice 1920's German violin. This instrument needs a new top block which means resetting the neck into the instrument.
+      I also plan on thinning the ribs in this instrument for the sake of improving sound quality.</p>
+    <img src=#>
+    <button>Like</button>
+  </article>
+  <article>
+    <h2>Future Project</h2>
+    <p>As a luthier, and a bass player, my bass is actually in shamefully bad shape. It needs a new bass bar, which I've never done on such a large instrument, so I suspect it will take me a very long time to get right. It also has several other cracks on
+      the ribs and top. So my conundrum is when to take the top off and go without a bass for a few weeks. I suspect it won't happen any time soon.</p>
+    <img class="noborder" src="http://www.thomasmartin.co.uk/images/bass-repairs/old_father_pollmann/9_double_bass_cleats_complete.jpg" width="500px">
+    <button>Like</button>
+  </article> -->
+
+</body>
+
+</html>
