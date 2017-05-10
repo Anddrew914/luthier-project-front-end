@@ -19,6 +19,7 @@ const signUpSuccess = (data) => {
   $('form#sign-up').hide()
   $('#instruments-div').text('')
   $('div.error-handling').text('')
+  document.getElementById('sign-up').reset()
 }
 
 const signUpFailure = () => {
@@ -68,6 +69,7 @@ const changePasswordFailure = () => {
 const addInstrumentSuccess = (data) => {
   $('div.error-handling').text('Instrument Created')
   refreshInstrumentDiv()
+  document.getElementById('add-instrument').reset()
 }
 
 const addInstrumentFailure = (addInstrumentSuccess) => {
