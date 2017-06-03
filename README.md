@@ -15,7 +15,7 @@ Approach:
 Since I had experienced working with user authentication before I built this part of the app first.
 It was fairly straightforward and went smoothly. My next step was to roughly design the web site.
 At first all of my user info forms and instrument info forms were right on the webpage. I used these forms
-to test my ajax requests. My biggest problem came at this point. When trying to get the ajax requests two
+to test my ajax requests. My biggest problem came at this point. When trying to get the ajax requests to
 add instruments to the forms I built I had two major problems. The first was understanding how getFormFields worked
 to turn form data into an object that got sent to the server. When I started looking at the object on my server logs
 as it was getting rejected and changing the forms around and experimenting with them I was able to understand how to
